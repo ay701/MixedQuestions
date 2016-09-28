@@ -1,0 +1,13 @@
+SOAP vs REST Web Services
+There are many differences between SOAP and REST web services. The important 10 differences between SOAP and REST are given below:
+
+SOAP is a protocol. REST is an architectural style.
+SOAP stands for Simple Object Access Protocol. REST stands for REpresentational State Transfer.
+SOAP can't use REST because it is a protocol. REST can use SOAP web services because it is a concept and can use any protocol like HTTP, SOAP.
+SOAP uses services interfaces to expose the business logic. REST uses URI to expose business logic.
+In Java JAX-WS is the java API for SOAP web services. In Java JAX-RS is the java API for RESTful web services.
+SOAP defines standards to be strictly followed. REST does not define too much standards like SOAP.
+SOAP requires more bandwidth and resource than REST. REST requires less bandwidth and resource than SOAP.
+SOAP defines its own security. RESTful web services inherits security measures from the underlying transport.
+SOAP permits XML data format only. REST permits different data format such as Plain text, HTML, XML, JSON etc.
+SOAP is less preferred than REST. REST more preferred than SOAP.
