@@ -1,0 +1,4 @@
+Simple.
+You can make good use of HTTP cache and proxy server to help you handle high load.
+It helps you organize even a very complex application into simple resources.
+It makes it easy for new clients to use your application, even if you haven't designed it specifically for them (probably, because they weren't around when you created your app).
