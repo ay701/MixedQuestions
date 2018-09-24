@@ -1,3 +1,5 @@
+// VistarMedia 1st Round //
+
 - Python List vs. Tuple
 
 List is mutable, Tuple is not
