@@ -1,6 +1,11 @@
 // VistarMedia 1st Round //
 
-- What's Javascript ES6?
+- What's Javascript ES6? Promise?
+(https://www.punch.cool/community/questions-answers/engineering/ecmascript6/)
+
+ECMAScript (European Computer Manufacturers Association Script)
+The sixth edition, initially known as ECMAScript 6 (ES6) and later renamed to ECMAScript 2015 (ES2015) adds significant new syntax for writing complex applications,
+including classes and modules, but defines them semantically in the same terms as ECMAScript 5 strict mode.
 
 - Python List vs. Tuple
 
