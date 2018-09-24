@@ -1,0 +1,113 @@
+- Python List vs. Tuple
+
+List is mutable, Tuple is not
+List cannot be used as index, Tuple can
+List has more methods like pop, delete, extend, etc. Tuple does not
+List uses [], tuple uses ()
+List has variable length, tuple has fixed length.
+
+- Difference between interpreted language and compiled language
+
+- Difference between a process and thread
+
+Process:
+
+An executing instance of a program is called a process.
+Some operating systems use the term ‘task‘ to refer to a program that is being executed.
+A process is always stored in the main memory also termed as the primary memory or random access memory.
+Therefore, a process is termed as an active entity. It disappears if the machine is rebooted.
+Several process may be associated with a same program.
+On a multiprocessor system, multiple processes can be executed in parallel.
+On a uni-processor system, though true parallelism is not achieved, a process scheduling algorithm is applied and the processor is scheduled to execute each process one at a time yielding an illusion of concurrency.
+Example: Executing multiple instances of the ‘Calculator’ program. Each of the instances are termed as a process.
+Thread:
+
+A thread is a subset of the process.
+It is termed as a ‘lightweight process’, since it is similar to a real process but executes within the context of a process and shares the same resources allotted to the process by the kernel.
+Usually, a process has only one thread of control – one set of machine instructions executing at a time.
+A process may also be made up of multiple threads of execution that execute instructions concurrently.
+Multiple threads of control can exploit the true parallelism possible on multiprocessor systems.
+On a uni-processor system, a thread scheduling algorithm is applied and the processor is scheduled to run each thread one at a time.
+All the threads running within a process share the same address space, file descriptors, stack and other process related attributes.
+Since the threads of a process share the same memory, synchronizing the access to the shared data within the process gains unprecedented importance.
+
+- Unit Test Vs Integration Test
+(https://www.guru99.com/unit-test-vs-integration-test.html)
+
+Unit Tests are conducted by developers and test the unit of code( aka module, component) he or she developed. It is a testing method by which individual units of source code are tested to determine if they are ready to use. It helps to reduce the cost of bug fixes since the bugs are identified during the early phases of development life cycle.
+
+Integration testing is executed by testers and tests integration between software modules. It is a software testing technique where individual units of a program are combined and tested as a group. Test stubs and test drivers are used to assist in Integration Testing. Integration test is performed in two way, they are bottom-up method and the top-down method.
+
+Unit test
+The idea behind Unit Testing is to test each part of the program and show that the individual parts are correct.
+It is kind of White Box Testing
+It can be performed at any time
+Unit Testing tests only the functionality of the units themselves and may not catch integration errors, or other system-wide issues
+It starts from the module specification
+It pays attention to the behavior of single modules
+Unit test does not verify whether your code works with external dependencies correctly.
+It is usually executed by developer
+Finding errors are easy
+Maintenance of unit test is cheap
+
+Integration test
+The idea behind Integration Testing is to combine modules in the application and test as a group to see that they are working fine
+It is kind of Black Box Testing
+It usually carried out after Unit Testing and before System Testing
+Integrating testing may detect errors when modules are integrated to build the overall system
+It starts from the interface specification
+It pays attention to integration among modules
+Integration tests verifies that your code works with external dependencies correctly.
+It is usually executed by test team
+Finding errors are difficult
+Maintenance of integration test is expensive
+
+- What is Promise in Javascript? How it works? Explain promise chaining, promise rules, Error handling
+(https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
+
+A promise is an object which can be returned synchronously from an asynchronous function. It will be in one of 3 possible states:
+
+Fulfilled: onFulfilled() will be called (e.g., resolve() was called)
+Rejected: onRejected() will be called (e.g., reject() was called)
+Pending: not yet fulfilled or rejected
+
+- PostgreSQL vs MySQL
+
+- Class method vs Static Method in Python
+(https://www.geeksforgeeks.org/class-method-vs-static-method-python/)
+
+- key characteristics of REST?
+
+Some key characteristics of REST includes
+
+REST is stateless, therefore the SERVER has no state (or session data)
+With a well-applied REST API, the server could be restarted between two calls as every data is passed to the server
+Web service mostly uses POST method to make operations, whereas REST uses GET to access resources
+
+- PUT method vs POST method
+"PUT" puts a file or resource at a particular URI and exactly at that URI. If there is already a file or resource at that URI, PUT changes that file or resource. If there is no resource or file there, PUT makes one
+POST sends data to a particular URI and expects the resource at that URI to deal with the request. The web server at this point can decide what to do with the data in the context of specified resource
+PUT is idempotent meaning, invoking it any number of times will not have an impact on resources.
+However, POST is not idempotent, meaning if you invoke POST multiple times it keeps creating more resources
+
+- Difference between SOAP and REST?
+
+SOAP
+
+SOAP is a protocol through which two computer communicates by sharing XML document
+SOAP permits only XML
+SOAP based reads cannot be cached
+SOAP is like custom desktop application, closely connected to the server
+SOAP is slower than REST
+It runs on HTTP but envelopes the message
+
+REST
+
+Rest is a service architecture and design for network-based software architectures
+REST supports many different data formats
+REST reads can be cached
+A REST client is more like a browser; it knows how to standardized methods and an application has to fit inside it
+REST is faster than SOAP
+It uses the HTTP headers to hold meta information
+
+- What's Javascript ES6?
