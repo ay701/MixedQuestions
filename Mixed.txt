@@ -1,5 +1,7 @@
 // VistarMedia 1st Round //
 
+- What's Javascript ES6?
+
 - Python List vs. Tuple
 
 List is mutable, Tuple is not
