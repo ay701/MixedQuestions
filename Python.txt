@@ -1,0 +1,136 @@
+- Benefits of using Python
+
+Huge standard of standard libraries
+Python does not require explicit memory management as the interpreter itself allocates the memory to new variables and free them automatically
+Provide easy readability due to use of square brackets
+Easy-to-learn for beginners
+Built-in data types saves programming time and effort from declaring variables
+
+- List comprehension & Dictionary comprehension
+
+It's a concise way to create lists.
+
+- map(), reduce(), filter(), zip() examples
+
+map functions expects a function object and any number of iterables like list, dictionary, etc.
+It executes the function_object for each element in the sequence and returns a list of the elements modified by the function object.
+
+map(function_object, iterable1, iterable2,...)
+
+def multiply2(x):
+  return x * 2
+
+map(multiply2, [1, 2, 3, 4])  # Output [2, 4, 6, 8]
+
+list_a = [1, 2, 3]
+list_b = [10, 20, 30]
+
+map(lambda x, y: x + y, list_a, list_b) # Output: [11, 22, 33]
+
+filter function expects two arguments, function_object and an iterable.
+function_object returns a boolean value.
+function_object is called for each element of the iterable and filter returns only those element for which the function_object returns true.
+
+filter(function_object, iterable)
+
+number_list = range(-5, 5)
+less_than_zero = list(filter(lambda x: x < 0, number_list))
+print(less_than_zero)
+
+# Output: [-5, -4, -3, -2, -1]
+
+Reduce is a really useful function for performing some computation on a list and returning the result. It applies a rolling computation to sequential pairs of values in a list. For example, if you wanted to compute the product of a list of integers.
+
+from functools import reduce
+product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
+
+# Output: 24
+
+The zip() function returns a zip object, which is an iterator of tuples where the first item in each passed iterator is paired together, and then the second item in each passed iterator are paired together etc.
+If the passed iterators have different lengths, the iterator with least items decides the length of the new iterator.
+
+a = ("John", "Charles", "Mike")
+b = ("Jenny", "Christy", "Monica", "Vicky")
+
+x = zip(a, b)
+
+#use the tuple() function to display a readable version of the result:
+
+print(tuple(x))
+
+(('John', 'Jenny'), ('Charles', 'Christy'), ('Mike', 'Monica'))
+
+- Module vs Package
+
+In Python, module is the way to structure program.
+Each Python program file is a module, which imports other modules like objects and attributes.
+The folder of Python program is a package of modules. A package can have modules or subfolders.
+
+- What is generator?
+
+The way of implementing iterators are known as generators.
+It is a normal function except that it yields expression in the function.
+
+- What is decorator?
+
+Decorator is a function, which takes a function as argument, define a wrapper function inside adding logic to that function, and return it.
+Decorators wrap a function, modifying its behavior.
+
+Example:
+
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_whee():
+    print("Whee!")
+
+- What is Lamba?
+
+A single expression anonymous function often used as inline function.
+A lambda form does not have statements as it is used to make new function object and then return them at runtime.
+
+- What is pass?
+
+No-operation Python statement. It is a place holder (in compound statement), where there should be a blank left and nothing has to be written there.
+
+- What modules used often?
+
+functools - map(), reduce(), filter() functions
+os - https://docs.python.org/3/library/os.html
+random - https://docs.python.org/3/library/random.html
+numPy - http://cs231n.github.io/python-numpy-tutorial/
+itertools - https://docs.python.org/3/library/itertools.html
+unittest - https://docs.python.org/3/library/unittest.html
+pychecker - static analysis tool that detects the bugs in Python source code and warns about the style and complexity of the bug.
+pylink - tool that verifies whether the module meets the coding standard.
+
+- Pickling and unpickling?
+
+Pickle module accepts any Python object and converts it into a string representation and dumps it into a file by using dump function, this process is called pickling. 
+While the process of retrieving original Python objects from the stored string representation is called unpickling.
+
+- How memory is managed in Python?
+
+Python memory is managed by Python private heap space.
+All Python objects and data structures are located in a private heap.
+The programmer does not have an access to this private heap and interpreter takes care of this Python private heap.
+The allocation of Python heap space for Python objects is done by Python memory manager.
+The core API gives access to some tools for the programmer to code.
+Python also have an inbuilt garbage collector, which recycle all the unused memory and frees the memory and makes it available to the heap space.
+
+- Passed by value or by reference?
+
+- Python data types:
+
+Numbers
+String
+Tuple
+
+Set
+List
+Dictionary
