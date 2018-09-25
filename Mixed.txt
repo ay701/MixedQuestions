@@ -1,11 +1,62 @@
 // VistarMedia 1st Round //
 
+- Python class method vs static method
+(https://www.geeksforgeeks.org/class-method-vs-static-method-python/)
+
+Class method uses decorator: @classmethod
+A class method receives the class as implicit first argument, just like an instance method receives the instance.
+To declare a class method, use this idiom:
+
+class C:
+    @classmethod
+    def f(cls, arg1, arg2, ...): ...
+The @classmethod form is a function decorator – see the description of function definitions in Function definitions for details.
+
+It can be called either on the class (such as C.f()) or on an instance (such as C().f()).
+The instance is ignored except for its class.
+If a class method is called for a derived class, the derived class object is passed as the implied first argument.
+
+Static method uses decorator: @staticmethod
+
+class A(object):
+    def foo(self,x):
+        print "executing foo(%s,%s)"%(self,x)
+
+    @classmethod
+    def class_foo(cls,x):
+        print "executing class_foo(%s,%s)"%(cls,x)
+
+    @staticmethod
+    def static_foo(x):
+        print "executing static_foo(%s)"%x
+
+a=A()
+
+With classmethods, the class of the object instance is implicitly passed as the first argument instead of self.
+With staticmethods, neither self (the object instance) nor cls (the class) is implicitly passed as the first argument.
+They behave like plain functions except that you can call them from an instance or the class:
+
+When to use what?
+
+We generally use class method to create factory methods. Factory methods return class object ( similar to a constructor ) for different use cases.
+We generally use static methods to create utility functions.
+
 - What's Javascript ES6? Promise?
 (https://www.punch.cool/community/questions-answers/engineering/ecmascript6/)
 
 ECMAScript (European Computer Manufacturers Association Script)
 The sixth edition, initially known as ECMAScript 6 (ES6) and later renamed to ECMAScript 2015 (ES2015) adds significant new syntax for writing complex applications,
 including classes and modules, but defines them semantically in the same terms as ECMAScript 5 strict mode.
+
+- What is Promise in Javascript? How it works?
+Explain promise chaining, promise rules, Error handling? How to Cancel a Promise?
+(https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
+
+A promise is an object which can be returned synchronously from an asynchronous function. It will be in one of 3 possible states:
+
+Fulfilled: onFulfilled() will be called (e.g., resolve() was called)
+Rejected: onRejected() will be called (e.g., reject() was called)
+Pending: not yet fulfilled or rejected
 
 - Python List vs. Tuple
 
@@ -15,7 +66,29 @@ List has more methods like pop, delete, extend, etc. Tuple does not
 List uses [], tuple uses ()
 List has variable length, tuple has fixed length.
 
-- Difference between interpreted language and compiled language
+- Difference between compiled language and interpreted language
+
+C and Java is an example of a compiled language. In order to run the above code, we need to run it through a C compiler.
+The compiler turns the code from human-readable format into machine code that the computer can run natively.
+The benefits of using a compiler to compile code is that it generally runs faster than interpreted code as it doesn't need to work it out on the fly as the application is running.
+The compiled program has also been checked for errors whilst it is being compiled.
+If there are any commands that the compiler doesn't like then they will be reported.
+This will enable you to fix all coding errors before getting a fully running program.
+
+gcc helloworld.c -o hello
+javac helloworld.java
+
+Python is an example of a compiled language. To run the interpreted code we do not need to compile it first.
+Instead, we can simply run the following command:
+python helloworld.py
+
+The python interpreter takes the human-readable code and turns it into something else before making it something the machine can read
+In general, it is considered that interpreted code will run more slowly than compiled code because it has to actively perform the step
+of turning the code into something the machine can handle on the fly as opposed to compiled code which can just run.
+
+Another benefit is that the code is always available for reading and it can be easily changed to work the way you want it to.
+With compiled code, you need to find where the code is kept, change it, compile it and redeploy the program.
+With interpreted code, you open the program, change it and it is ready to go.
 
 - Difference between a process and thread
 
@@ -43,9 +116,14 @@ Since the threads of a process share the same memory, synchronizing the access t
 - Unit Test Vs Integration Test
 (https://www.guru99.com/unit-test-vs-integration-test.html)
 
-Unit Tests are conducted by developers and test the unit of code( aka module, component) he or she developed. It is a testing method by which individual units of source code are tested to determine if they are ready to use. It helps to reduce the cost of bug fixes since the bugs are identified during the early phases of development life cycle.
+Unit Tests are conducted by developers and test the unit of code( aka module, component) he or she developed.
+It is a testing method by which individual units of source code are tested to determine if they are ready to use.
+It helps to reduce the cost of bug fixes since the bugs are identified during the early phases of development life cycle.
 
-Integration testing is executed by testers and tests integration between software modules. It is a software testing technique where individual units of a program are combined and tested as a group. Test stubs and test drivers are used to assist in Integration Testing. Integration test is performed in two way, they are bottom-up method and the top-down method.
+Integration testing is executed by testers and tests integration between software modules.
+It is a software testing technique where individual units of a program are combined and tested as a group.
+Test stubs and test drivers are used to assist in Integration Testing.
+Integration test is performed in two way, they are bottom-up method and the top-down method.
 
 Unit test
 The idea behind Unit Testing is to test each part of the program and show that the individual parts are correct.
@@ -70,15 +148,6 @@ Integration tests verifies that your code works with external dependencies corre
 It is usually executed by test team
 Finding errors are difficult
 Maintenance of integration test is expensive
-
-- What is Promise in Javascript? How it works? Explain promise chaining, promise rules, Error handling
-(https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
-
-A promise is an object which can be returned synchronously from an asynchronous function. It will be in one of 3 possible states:
-
-Fulfilled: onFulfilled() will be called (e.g., resolve() was called)
-Rejected: onRejected() will be called (e.g., reject() was called)
-Pending: not yet fulfilled or rejected
 
 - PostgreSQL vs MySQL
 
