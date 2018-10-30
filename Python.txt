@@ -105,6 +105,7 @@ os - https://docs.python.org/3/library/os.html
 random - https://docs.python.org/3/library/random.html
 numPy - http://cs231n.github.io/python-numpy-tutorial/
 itertools - https://docs.python.org/3/library/itertools.html
+  // Permutation, accumulate, groupby, product
 unittest - https://docs.python.org/3/library/unittest.html
 pychecker - static analysis tool that detects the bugs in Python source code and warns about the style and complexity of the bug.
 pylink - tool that verifies whether the module meets the coding standard.
