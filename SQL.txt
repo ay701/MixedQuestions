@@ -1,0 +1,80 @@
+
+Your choice of which method to use will depend on whether simplicity or performance is more important in your application.
+
+How to improve DB performace
+
+Improve Indexes.
+Choose What to Index.
+Use the Query Optimizer.
+Understand Response Time vs. Total Time.
+Rewrite Subqueries to Use JOIN.
+Use Parameterized Queries.
+Query Only When You Must.
+
+
+
+Clustered Index Vs. Non Clustered Index
+
+A clustered index means you are telling the database to store close values actually close to one another on the disk. This has the benefit of rapid scan / retrieval of records falling into some range of clustered index values.
+
+For example, you have two tables, Customer and Order:
+
+Customer
+----------
+ID
+Name
+Address
+
+Order
+----------
+ID
+CustomerID
+Price
+If you wish to quickly retrieve all orders of one particular customer, you may wish to create a clustered index on the "CustomerID" column of the Order table. This way the records with the same CustomerID will be physically stored close to each other on disk (clustered) which speeds up their retrieval.
+
+P.S. The index on CustomerID will obviously be not unique, so you either need to add a second field to "uniquify" the index or let the database handle that for you but that's another story.
+
+Regarding multiple indexes. You can have only one clustered index per table because this defines how the data is physically arranged. If you wish an analogy, imagine a big room with many tables in it. You can either put these tables to form several rows or pull them all together to form a big conference table, but not both ways at the same time. A table can have other indexes, they will then point to the entries in the clustered index which in its turn will finally say where to find the actual data.
+
+
+Clustered Indexes
+Clustered indexes are indexes that uniquely identify the rows in an SQL table.
+Every table can have exactly one clustered index.
+You can create a clustered index that covers more than one column. For example: create Index index_name(col1, col2, col.....).
+By default, a column with a primary key already has a clustered index.
+Non-clustered Indexes
+Non-clustered indexes are like simple indexes. They are just used for fast retrieval of data. Not sure to have unique data.
+
+
+Clustered Index
+
+A clustered index determine the physical order of DATA in a table.For this reason a table have only 1 clustered index.
+
+like "dictionary" No need of any other Index, its already Index according to words
+
+Nonclustered Index
+
+A non clustered index is analogous to an index in a Book.The data is store in one place. the index is store in another place and the index have pointers to the storage location of the data.For this reason a table have more than 1 Nonclustered index.
+
+like "Chemistry book" at staring there is a separate index to point Chapter location and At the "END" there is another Index pointing the common WORDS location
+
+
+
+
+When to create an index
+
+There is no simple formula to determine whether an index should be created. You must consider the trade-off of the benefits of indexed retrieval versus the maintenance overhead of that index. The following factors may help to determine whether you should create an index:
+
+- Keys and unique columns   SQL Anywhere automatically creates indexes on primary keys, foreign keys, and unique columns. You should not create additional indexes on these columns. The exception is composite keys, which can sometimes be enhanced with additional indexes.
+
+For more information, see Composite indexes.
+
+- Frequency of search   If a particular column is searched frequently, you can achieve performance benefits by creating an index on that column. Creating an index on a column that is rarely searched may not be worthwhile.
+
+- Size of table   Indexes on relatively large tables with many rows provide greater benefits than indexes on relatively small tables. For example, a table with only 20 rows is unlikely to benefit from an index, since a sequential scan would not take any longer than an index lookup.
+
+- Number of updates   An index is updated every time a row is inserted or deleted from the table and every time an indexed column is updated. An index on a column slows the performance of inserts, updates and deletes. A database that is frequently updated should have fewer indexes than one that is read-only.
+
+- Space considerations   Indexes take up space within the database. If database size is a primary concern, you should create indexes sparingly.
+
+- Data distribution   If an index lookup returns too many values, it is more costly than a sequential scan. SQL Anywhere does not make use of the index when it recognizes this condition. For example, SQL Anywhere would not make use of an index on a column with only two values, such as Employees.Sex in the SQL Anywhere sample database. For this reason, you should not create an index on a column that has only a few distinct values.

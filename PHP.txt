@@ -1,0 +1,32 @@
+- Single quote vs Double quote
+https://stackoverflow.com/questions/3446216/what-is-the-difference-between-single-quoted-and-double-quoted-strings-in-php
+
+- Session vs Cookie vs Cache
+https://stackoverflow.com/questions/6253633/cookies-vs-sessions
+
+Session:
+
+IDU is stored on server (i.e. server-side)
+Safer (because of 1)
+Expiration can not be set, session variables will be expired when users close the browser. (nowadays it is stored for 24 minutes as default in php)
+
+Cookies:
+
+IDU is stored on web-browser (i.e. client-side)
+Not very safe, since hackers can reach and get your information (because of 1)
+Expiration can be set (see setcookies() for more information)
+
+- Trait vs Abstract Class
+https://stackoverflow.com/questions/39466521/difference-between-trait-and-an-abstract-class-in-php
+
+Traits allow you to share code between your classes without forcing you into a specific class hierarchy. Say you want all your classes to have the convenient utility method foo($bar); without traits you have two choices:
+
+implement it individually with code redundancy in each class
+inherit from a common (abstract) ancestor class
+
+- include() vs require() vs require_once()
+
+- Error handling
+
+- objects are they passed by value or by reference? 
+Value

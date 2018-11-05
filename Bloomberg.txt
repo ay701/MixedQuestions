@@ -1,0 +1,21 @@
+<!-- Enter your HTML code here -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sample Title</title>
+</head>
+<body>
+
+<ul>
+	<li><a href="https://wordpress.org/" target="_blank">This is a sample link</a></li>
+	<li><a href="https://wordpress.org/news/" target="_blank">This is a sample link</a></li>
+	<li><a href="https://make.wordpress.org/core/" target="_blank">This is a sample link</a></li>
+</ul>
+
+</body>
+</html>
+
+1. remove duplicates 
+2. print pyramind
+3. Javascript
