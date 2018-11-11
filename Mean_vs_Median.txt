@@ -1,0 +1,20 @@
+Let's say we have a set of numbers:
+
+11
+23
+30
+47
+56
+The mean, sometimes called the arithmetic mean, of this set is 33. The mean is the sum of all the numbers in the set (167) divided by the amount of numbers in the set (5).
+
+The median is the middle point of a number set, in which half the numbers are above the median and half are below. In our set above, the median is 30. But what if your number set has an even number of, er, numbers:
+
+11
+23
+30
+47
+52
+56
+To calculate the median here, add the two middle numbers (30 + 47) and divide by 2. The median for our new list is 38.5.
+
+So far, so good. But what about average? The average of a set of numbers is the same as its mean; they're synonyms.

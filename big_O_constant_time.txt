@@ -1,0 +1,19 @@
+You're going to want to read up on Order of complexity.
+
+http://en.wikipedia.org/wiki/Big_O_notation
+
+In short, O(1) means that it takes a constant time, like 14 nanoseconds, or three minutes no matter the amount of data in the set.
+
+O(n) means it takes an amount of time linear with the size of the set, so a set twice the size will take twice the time. You probably don't want to put a million objects into one of these.
+
+O(1) means that it takes the same amount of time to look up a value in your collection whether you have a small number of items in your collection or very very many (within the constraints of your hardware)
+
+O(n) would mean that the time it takes to look up an item is proportional to the number of items in the collection.
+
+Typical examples of these are arrays, which can be accessed directly, regardless of their size, and linked lists, which must be traversed in order from the beginning to access a given item.
+
+The other operation usually discussed is insert. A collection can be O(1) for access but O(n) for insert. In fact an array has exactly this behavior, because to insert an item in the middle, You would have to move each item to the right by copying it into the following slot.
+
+O(1) means the time to access something is independent of the number of items in the collection.
+
+O(N) would mean the time to access an item is a proportional to the number (N) of items in the collection.

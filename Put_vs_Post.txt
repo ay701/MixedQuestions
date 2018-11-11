@@ -1,0 +1,23 @@
+PUT implies putting a resource - completely replacing whatever is available at the given URL with a different thing. By definition, a PUT is idempotent. Do it as many times as you like, and the result is the same. x=5 is idempotent. You can PUT a resource whether it previously exists, or not (eg, to Create, or to Update)!
+
+POST updates a resource, adds a subsidiary resource, or causes a change. A POST is not idempotent, in the way that x++ is not idempotent.
+
+By this argument, PUT is for creating when you know the URL of the thing you will create. POST can be used to create when you know the URL of the "factory" or manager for the category of things you want to create.
+
+so:
+
+POST /expense-report
+or:
+
+PUT  /expense-report/10929
+
+
+
+
+POST creates a child resource, so POST to /items creates a resources that lives under the /items resource. Eg. /items/1. Sending the same post packet twice will create two resources.
+
+PUT is for creating or replacing a resource at a URL known by the client.
+
+Therefore: PUT is only a candidate for CREATE where the client already knows the url before the resource is created. Eg. /blogs/nigel/entry/when_to_use_post_vs_put as the title is used as the resource key
+
+PUT replaces the resource at the known url if it already exists, so sending the same request twice has no effect. In other words, calls to PUT are idempotent.

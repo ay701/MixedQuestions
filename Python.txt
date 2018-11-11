@@ -135,3 +135,133 @@ Tuple
 Set
 List
 Dictionary
+
+
+- What is library for Python multithreading?
+
+threading Module 
+multiprocessing Module
+
+Every process has at least one thread, i.e. the process itself.
+A process can start multiple threads.
+The operating system executes these threads like parallel "processes".
+On a single processor machine, this parallelism is achieved by thread scheduling or timeslicing.
+
+Advantages of Threading:
+================================================
+Multithreaded programs can run faster on computer systems with multiple CPUs, because theses threads can be executed truly concurrent.
+A program can remain responsive to input. This is true both on single and on multiple CPU
+Threads of a process can share the memory of global variables.
+If a global variable is changed in one thread, this change is valid for all threads.
+A thread can have local variables.
+
+
+What is asyncio — Asynchronous I/O ?
+================================================
+asyncio is a library to write concurrent code using the async/await syntax.
+asyncio is used as a foundation for multiple Python asynchronous frameworks that provide high-performance network and web-servers, database connection libraries, distributed task queues, etc.
+asyncio is often a perfect fit for IO-bound and high-level structured network code.
+
+
+asyncio provides a set of high-level APIs to:
+================================================
+run Python coroutines concurrently and have full control over their execution;
+perform network IO and IPC;
+control subprocesses;
+distribute tasks via queues;
+synchronize concurrent code;
+
+
+Hello World! Example
+
+import asyncio
+
+async def main():
+    print('Hello ...')
+    await asyncio.sleep(1)
+    print('... World!')
+
+# Python 3.7+
+asyncio.run(main())
+
+
+What is context manager?
+================================================
+https://jeffknupp.com/blog/2016/03/07/python-with-context-managers/
+
+Perhaps the most common (and important) use of context managers is to properly manage resources,
+for example: "with" to open file
+
+create a context manager. The simplest is to define a class that contains two special methods: __enter__() and __exit__().
+__enter__() returns the resource to be managed (like a file object in the case of open()).
+__exit__() does any cleanup work and returns nothing.
+
+class File():
+
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+
+    def __enter__(self):
+        self.open_file = open(self.filename, self.mode)
+        return self.open_file
+
+    def __exit__(self, *args):
+        self.open_file.close()
+
+files = []
+for _ in range(10000):
+    with File('foo.txt', 'w') as infile:
+        infile.write('foo')
+        files.append(infile)
+
+
+Other Useful Context Managers
+Given that context managers are so helpful, they were added to the Standard Library in a number of places.
+Lock objects in threading are context managers, as are zipfile.ZipFiles. subprocess.Popen, tarfile.TarFile, telnetlib.Telnet, pathlib.Path... the list goes on and on.
+Essentially, any object that needs to have close called on it after use is (or should be) a context manager.
+
+
+
+What is the Python Global Interpreter Lock (GIL)?
+=====================================================
+The Python Global Interpreter Lock or GIL, in simple words, is a mutex (or a lock) that allows only one thread to hold the control of the Python interpreter.
+This means that only one thread can be in a state of execution at any point in time.
+The impact of the GIL isn’t visible to developers who execute single-threaded programs, but it can be a performance bottleneck in CPU-bound and multi-threaded code.
+Since the GIL allows only one thread to execute at a time even in a multi-threaded architecture with more than one CPU core, the GIL has gained a reputation as an “infamous” feature of Python.
+
+Python uses reference counting for memory management. It means that objects created in Python have a reference count variable that keeps track of the number of references that point to the object.
+When this count reaches zero, the memory occupied by the object is released.
+
+
+Duck Typing
+
+===========
+
+Duck typing in computer programming is an application of the duck test—"If it walks like a duck and it quacks like a duck, then it must be a duck"—to determine if an object can be used for a particular purpose. With normal typing, suitability is determined by an object's type. In duck typing, an object's suitability is determined by the presence of certain methods and properties, rather than the type of the object itself.
+
+Example
+This is a simple example in Python 3 that demonstrates how any object may be used in any context, up until it is used in a way that it does not support.
+
+class Duck:
+    def fly(self):
+        print("Duck flying")
+
+class Airplane:
+    def fly(self):
+        print("Airplane flying")
+
+class Whale:
+    def swim(self):
+        print("Whale swimming")
+
+def lift_off(entity):
+    entity.fly()
+
+duck = Duck()
+airplane = Airplane()
+whale = Whale()
+
+lift_off(duck) # prints `Duck flying`
+lift_off(airplane) # prints `Airplane flying`
+lift_off(whale) # Throws the error `'Whale' object has no attribute 'fly'`
