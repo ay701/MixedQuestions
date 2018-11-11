@@ -1,0 +1,30 @@
+A hash is a string or number generated from a string of text. The resulting string or number is a fixed length, and will vary widely with small variations in input. The best hashing algorithms are designed so that it's impossible to turn a hash back into its original string.
+
+Hashing is an ideal way to store passwords, as hashes are inherently one-way in their nature. By storing passwords in hash format, it's very difficult for someone with access to the raw data to reverse it (assuming a strong hashing algorithm and appropriate salt has been used to generate it).
+
+POPULAR ALGORITHMS
+MD5 - MD5 is the most widely known hashing function. It produces a 16-byte hash value, usually expressed as a 32 digit headecimal number. Recently a few vulnerabilities have been discovered in MD5, and rainbow tables have been published which allow people to reverse MD5 hashes made without good salts.
+
+SHA - There are three different SHA algorithms -- SHA-0, SHA-1, and SHA-2. SHA-0 is very rarely used, as it has contained an error which was fixed with SHA-1. SHA-1 is the most commonly used SHA algorithm, and produces a 20-byte hash value.
+
+SHA-2 consists of a set of 6 hashing algorithms, and is considered the strongest. SHA-256 or above is recommended for situations where security is vital. SHA-256 produces 32-byte hash values.
+
+
+====================
+
+Encryption turns data into a series of unreadable characters, that aren't of a fixed length. The key difference between encryption and hashing is that encrypted strings can be reversed back into their original decrypted form if you have the right key.
+
+
+POPULAR ALGORITHMS
+AES - AES is the "gold standard" when it comes to symmetric key encryption, and is recommended for most use cases, with a key size of 256 bits. Learn more about AES.
+PGP - PGP is the most popular public key encryption algorithm. Learn more about PGP.
+WHEN SHOULD ENCRYPTION BE USED?
+Encryption should only ever be used over hashing when it is a necessity to decrypt the resulting message. For example, if you were trying to send secure messages to someone on the other side of the world, you would need to use encryption rather than hashing, as the message is no use to the receiver if they cannot decrypt it.
+
+If the raw value doesn't need to be known for the application to work correctly, then hashing should always be used instead, as it is more secure.
+
+If you have a usecase where you have determined that encryption is necessary, you then need to choose between symmetric and public key encryption. Symmetric encryption provides improved performance, and is simpler to use, however the key needs to be known by both the person/software/system encrypting and decrypting data.
+
+If you were communicating with someone on the other side of the world, you'd need to find a secure way to send them the key before sharing your secure messages. If you already had a secure way to send someone an encryption key, then it stands to reason you would send your secure messages via that channel too, rather than using symmetric encryption in the first place.
+
+Many people work around this shortcoming of symmetric encryption by initially sharing an encryption key with someone using public key encryption, then symmetric encryption from that point onwards -- eliminating the challenge of sharing the key securely.

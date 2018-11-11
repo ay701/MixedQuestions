@@ -2,3 +2,9 @@ Simple.
 You can make good use of HTTP cache and proxy server to help you handle high load.
 It helps you organize even a very complex application into simple resources.
 It makes it easy for new clients to use your application, even if you haven't designed it specifically for them (probably, because they weren't around when you created your app).
+
+An API can be considered “RESTful” if it has the following features (not a complete list just the main ones):
+
+Client–server – The client handles the front end the server handles the backend and can both be replaced independently of each other.
+Stateless – No client data is stored on the server between requests and session state is stored on the client.
+Cacheable – Clients can cache response (just like browsers caching static elements of a web page) to improve performance.
