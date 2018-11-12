@@ -2,7 +2,7 @@
 Your choice of which method to use will depend on whether simplicity or performance is more important in your application.
 
 How to improve DB performace
-
+===========================
 Improve Indexes.
 Choose What to Index.
 Use the Query Optimizer.
@@ -12,9 +12,8 @@ Use Parameterized Queries.
 Query Only When You Must.
 
 
-
 Clustered Index Vs. Non Clustered Index
-
+===========================
 A clustered index means you are telling the database to store close values actually close to one another on the disk. This has the benefit of rapid scan / retrieval of records falling into some range of clustered index values.
 
 For example, you have two tables, Customer and Order:
@@ -38,6 +37,7 @@ Regarding multiple indexes. You can have only one clustered index per table beca
 
 
 Clustered Indexes
+===========================
 Clustered indexes are indexes that uniquely identify the rows in an SQL table.
 Every table can have exactly one clustered index.
 You can create a clustered index that covers more than one column. For example: create Index index_name(col1, col2, col.....).
@@ -47,22 +47,19 @@ Non-clustered indexes are like simple indexes. They are just used for fast retri
 
 
 Clustered Index
-
+===========================
 A clustered index determine the physical order of DATA in a table.For this reason a table have only 1 clustered index.
-
 like "dictionary" No need of any other Index, its already Index according to words
 
+
 Nonclustered Index
-
-A non clustered index is analogous to an index in a Book.The data is store in one place. the index is store in another place and the index have pointers to the storage location of the data.For this reason a table have more than 1 Nonclustered index.
-
+===========================
+A non clustered index is analogous to an index in a Book. The data is store in one place. the index is store in another place and the index have pointers to the storage location of the data.For this reason a table have more than 1 Nonclustered index.
 like "Chemistry book" at staring there is a separate index to point Chapter location and At the "END" there is another Index pointing the common WORDS location
 
 
-
-
 When to create an index
-
+===========================
 There is no simple formula to determine whether an index should be created. You must consider the trade-off of the benefits of indexed retrieval versus the maintenance overhead of that index. The following factors may help to determine whether you should create an index:
 
 - Keys and unique columns   SQL Anywhere automatically creates indexes on primary keys, foreign keys, and unique columns. You should not create additional indexes on these columns. The exception is composite keys, which can sometimes be enhanced with additional indexes.
@@ -78,3 +75,19 @@ For more information, see Composite indexes.
 - Space considerations   Indexes take up space within the database. If database size is a primary concern, you should create indexes sparingly.
 
 - Data distribution   If an index lookup returns too many values, it is more costly than a sequential scan. SQL Anywhere does not make use of the index when it recognizes this condition. For example, SQL Anywhere would not make use of an index on a column with only two values, such as Employees.Sex in the SQL Anywhere sample database. For this reason, you should not create an index on a column that has only a few distinct values.
+
+
+When to use self join?
+===========================
+
+A self JOIN is a regular join, but the table is joined with itself. When we need to get result from same table but with different ids.
+
+SQL Self JOIN Example
+The following SQL statement matches customers that are from the same city:
+
+Example
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID <> B.CustomerID
+AND A.City = B.City 
+ORDER BY A.City;
