@@ -1,27 +1,38 @@
 Process
-Each process provides the resources needed to execute a program. A process has a virtual address space, executable code, open handles to system objects, a security context, a unique process identifier, environment variables, a priority class, minimum and maximum working set sizes, and at least one thread of execution. Each process is started with a single thread, often called the primary thread, but can create additional threads from any of its threads.
+----------------
+Each process provides the resources needed to execute a program.
+A process has a virtual address space, executable code, open handles to system objects, a security context, a unique process identifier, environment variables, a priority class, minimum and maximum working set sizes, and at least one thread of execution.
+Each process is started with a single thread, often called the primary thread, but can create additional threads from any of its threads.
 
 Thread
-A thread is an entity within a process that can be scheduled for execution. All threads of a process share its virtual address space and system resources. In addition, each thread maintains exception handlers, a scheduling priority, thread local storage, a unique thread identifier, and a set of structures the system will use to save the thread context until it is scheduled. The thread context includes the thread's set of machine registers, the kernel stack, a thread environment block, and a user stack in the address space of the thread's process. Threads can also have their own security context, which can be used for impersonating clients.
+----------------
+A thread is an entity within a process that can be scheduled for execution.
+All threads of a process share its virtual address space and system resources.
+In addition, each thread maintains exception handlers, a scheduling priority, thread local storage, a unique thread identifier, and a set of structures the system will use to save the thread context until it is scheduled.
+The thread context includes the thread's set of machine registers, the kernel stack, a thread environment block, and a user stack in the address space of the thread's process.
+Threads can also have their own security context, which can be used for impersonating clients.
 
+Differences:
 A process is a collection of code, memory, data and other resources. 
-A thread is a sequence of code that is executed within the scope of the process. You can (usually) have multiple threads executing concurrently within the same process.
+A thread is a sequence of code that is executed within the scope of the process.
+You can (usually) have multiple threads executing concurrently within the same process.
 
 Process: 
-
+----------------
 Process is a heavy weight process.
 Process is a separate program that has separate memory,data,resources ect.
 Process are created using fork() method.
 Context switch between the process is time consuming. 
-Example: 
+[Example]
 Say, opening any browser (mozilla, Chrome, IE). At this point new process will start to execute.
 
-Threads:
-
-Threads are light weight processes.Threads are bundled inside the process.
+Thread:
+----------------
+Threads are light weight processes.
+Threads are bundled inside the process.
 Threads have a shared memory,data,resources,files etc.
 Threads are created using clone() method.
 Context switch between the threads are not much time consuming as Process.
-Example: 
+[Example]
 Opening multiple tabs in the browser. 
 
