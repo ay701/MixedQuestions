@@ -1,0 +1,37 @@
+Here’s the list of the top 10 best ES6 features for a busy software engineer (in no particular order):
+(https://webapplog.com/es6/)
+
+Default Parameters in ES6
+var link = function(height = 50, color = 'red', url = 'http://azat.co') {
+  ...
+}
+
+Template Literals in ES6 
+var name = `Your name is ${first} ${last}.`
+var url = `http://localhost:3000/api/messages/${id}`
+
+Multi-line Strings in ES6 -  Use backticks signs ``
+
+Destructuring Assignment in ES6
+
+
+Enhanced Object Literals in ES6
+Arrow Functions in ES6
+Promises in ES6
+Block-Scoped Constructs Let and Const
+Classes in ES6
+Modules in ES6
+Array.find()
+Array.findIndex()
+The isNaN() Method
+The isFinite() Method
+
+New Number Properies
+EPSILON
+MIN_SAFE_INTEGER
+MAX_SAFE_INTEGER
+
+New Number Methods
+Number.isInteger()
+Number.isSafeInteger()
+
