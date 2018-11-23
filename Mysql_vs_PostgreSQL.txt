@@ -1,0 +1,22 @@
+https://www.2ndquadrant.com/en/postgresql/postgresql-vs-mysql/
+
+PostgreSQL supports many NoSQL features like native XML support and key-value pairs with HSTORE. It also supports indexing JSON data for faster access.
+MySQL has JSON data type support but no other NoSQL feature. It does not support indexing for JSON.
+
+PostgreSQL is an open-source project maintained by PostgreSQL Global Development Group and its prolific community by a full list of the contributors, and the source code is on Github.
+
+MySQL's source code is available under the terms of the GNU General Public License, as well as under a variety of proprietary agreements. MySQL is now owned by Oracle Corporation. For proprietary use, several paid editions are available and offer additional functionality, for example: notably MariaDB and Percona Server. 
+
+PostgreSQL is ACID compliant from ground up and ensures that all requirements are met.
+
+MySQL is only ACID compliant when using InnoDB and NDB Cluster Storage engines.
+
+- ACID (Atomicity, Consistency, Isolation, Durability) is a set of properties of database transactions. The ACID compliance ensures that no data is lost or miscommunicated across the system in case of failure, even when there are multiple changes made during a single transaction.
+
+PostgreSQL has better replication features to producing extremely fast WAL processing that results in almost real-time replication and hot standby capabilities for standby servers. 
+
+PostgreSQL is widely used in large systems where read and write speeds are crucial and data needs to validated. In addition, it supports a variety of performance optimizations that are available only in commercial solutions such as Geospatial data support, concurrency without read locks, and so on (e.g. Oracle, SQL Server). 
+
+MySQL is a widely chosen for web based projects that need a database simply for straightforward data transactions. It is common, though, for MySQL to underperform when strained by a heavy loads or when attempting to complete complex queries.
+
+PostgreSQL supports many programming languages, NoSQL not.

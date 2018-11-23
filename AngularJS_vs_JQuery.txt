@@ -1,0 +1,28 @@
+jQuery is one of the most popular Javascript library. It is a DOM manipulation library which makes the usage of Javascript for your website even more easier. Let us look at the features that are available in the jQuery library:
+
+CSS manipulation
+HTML/DOM manipulation
+Event Handling
+Ajax/ JSONP
+Effects and animations
+Cross browser compatibility
+Lightweight
+
+
+AngularJS is a Javascript framework which is specifically designed to create single page applications or SPAs. With the help of the complete structured environment to create the perfect SPAs with less to zero spaghetti code.
+
+Here are the key features of AngularJS:
+
+Angular directives (extension to HTML)
+Dependency injection
+Support MVC
+Two way data binding
+RESTful API
+Form validation
+
+
+Both jQuery and AngularJS are helpful, however, latter is a bit more structured and organised, that helps the developers to get the best single page application. This also supports the AJAX / JSONP.
+
+When you are looking for a lightweight and powerful DOM manipulation, jQuery might be the first choice. jQuery is a library of design and might help you to customise the DOM along with JavaScript. 
+
+When you are looking for a SPA website you can rely on AngularJS for the structurality that it has.

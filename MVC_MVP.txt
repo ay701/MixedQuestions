@@ -1,0 +1,10 @@
+Here are the key differences between the patterns:
+
+·    MVP Pattern
+o    The view is more loosely coupled to the model. The presenter is responsible for binding the model to the view.
+o    Easier to unit test because interaction with the view is through an interface
+o    Usually, view presenter map one to one. Complex views may have multi presenters.
+
+·    MVC Pattern
+o    Controllers are based on behaviors and can be shared across views
+o    Can be responsible for determining which view to display (Front Controller Pattern)

@@ -1,0 +1,15 @@
+https://docs.angularjs.org/guide/di
+https://www.tutorialspoint.com/angularjs/angularjs_dependency_injection.htm
+
+Dependency Injection (DI) is a software design pattern that deals with how components get hold of their dependencies.
+Dependency Injection is a software design in which components are given their dependencies instead of hard coding them within the component. It relieves a component from locating the dependency and makes dependencies configurable. It also helps in making components reusable, maintainable and testable.
+
+The AngularJS injector subsystem is in charge of creating components, resolving their dependencies, and providing them to other components as requested.
+
+AngularJS provides a supreme Dependency Injection mechanism. It provides following core components which can be injected into each other as dependencies.
+
+Value
+Factory
+Service
+Provider
+Constant
