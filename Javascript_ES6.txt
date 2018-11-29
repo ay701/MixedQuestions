@@ -1,4 +1,34 @@
-Here’s the list of the top 10 best ES6 features for a busy software engineer (in no particular order):
+ECMAScript 6 is also known as ES6 and ECMAScript 2015.
+
+ES6 features
+---------------------------------
+Some people like to call it JavaScript 6.
+
+JavaScript let : The let statement allows you to declare a variable with block scope.
+var x = 10;
+// Here x is 10
+{
+    let x = 2;
+    // Here x is 2
+}
+// Here x is 10
+
+JavaScript const : Constants are similar to let variables, except that the value cannot be changed.
+var x = 10;
+// Here x is 10
+{
+    const x = 2;
+    // Here x is 2
+}
+// Here x is 10
+
+Exponentiation (**) : The exponentiation operator (**) raises the first operand to the power of the second operand.
+
+Default parameter values
+Array.find()
+Array.findIndex()
+
+
 (https://webapplog.com/es6/)
 
 Default Parameters in ES6
@@ -35,3 +65,19 @@ New Number Methods
 Number.isInteger()
 Number.isSafeInteger()
 
+
+
+
+Arrow Functions
+Arrow functions allows a short syntax for writing function expressions.
+
+You don't need the function keyword, the return keyword, and the curly brackets.
+
+Example
+// ES5
+var x = function(x, y) {
+     return x * y;
+}
+
+// ES6
+const x = (x, y) => x * y;
