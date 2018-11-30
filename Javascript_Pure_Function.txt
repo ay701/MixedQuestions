@@ -1,0 +1,39 @@
+Pure functions in Javascript are kind of Functions where the return value is determined by its parameter passed at call time.
+
+Javascript is not a purely functional language; it treats functions as objects (first-class functions).
+If you provide some input parameter value to the function and it always returns the same result, then It’s Pure Functions in Javascript.
+
+Pure Functions strictly does not rely on particular Ajax call or any Database call. It simply takes a parameter and performs some calculation provides in function body and return it.
+
+It solely depends upon the argument pass it into the functions call.
+
+Pure Functions In Javascript
+Pure Functions In Javascript
+It only maps the input values to the output values.
+
+Advantages:
+You can always predict the result of a given function.
+Testing is always easy because It does not mutate the state of a variable outside of its lexical scope.
+Functional programming reduces the line of codes and almost get rid of a loop.
+Examples:
+ 
+
+//main.js
+
+let pure = (y) => {
+    let x = 10;
+    x = x + y;
+    return x;
+};
+
+let y = pure(3);
+console.log(y); // 13
+
+let z = pure(3);
+console.log(z); // 13
+If you directly run above code in the browser, then you might face the following issue.
+
+Possible Errors
+You can get any syntax error.
+If you perform code directly in your browser, then chances are very high to fail the webpack compilation process.
+
