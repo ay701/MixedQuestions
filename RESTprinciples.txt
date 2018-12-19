@@ -1,20 +1,60 @@
+Representational State Transfer, its a architecture style web service.
+
 REST architectural style describes six constraints applied to architecture:
 
 1. Uniform Interface
-Individual resources are identified using URLS. The resources (database) are themselves different from the representation (XML, JSON, HTML) sent to the client. The client can manipulate the resource through the representations provided they have the permissions. Each message sent between the client and the server is self-descriptive and includes enough information to describe how it is to be processed. The hypermedia that is hyperlinks and hypertext act as the engine for state transfer.
+Individual resources are identified using URLS.
+The resources (database) are themselves different from the representation (XML, JSON, HTML) sent to the client.
+The client can manipulate the resource through the representations provided they have the permissions.
+Each message sent between the client and the server is self-descriptive and includes enough information to describe how it is to be processed.
+The hypermedia that is hyperlinks and hypertext act as the engine for state transfer.
 
 2. Stateless Interactions
-none of the clients context is to be stored on the server side between the request. All of the information necessary to service the request is contained in the URL, query parameters, body or headers.
+None of the clients context is to be stored on the server side between the request.
+All of the information necessary to service the request is contained in the URL, query parameters, body or headers.
 
 3. Cacheable
 Clients can cache the responses. The responses must define themselves as cacheable or not to
 prevent the client from sending the inappropriate data in response to further requests.
 
 4. Client-Server
-The clients and the server are separated from each other thus the client is not concerned with the data storage thus the portability of the client code is improved while on the server side the server is not concerned with the client interference thus the server is simpler and easy to scale.
+The clients and the server are separated from each other thus the client is not concerned with the data storage
+thus the portability of the client code is improved while on the server side the server is not concerned with the client interference
+thus the server is simpler and easy to scale.
 
 5. Layered System
-At any time client cannot tell if it is connected to the end server or to an intermediate. The  intermediate layer helps to enforce the security policies and improve the system scalability by enabling load-balancing
+At any time client cannot tell if it is connected to the end server or to an intermediate.
+The intermediate layer helps to enforce the security policies and improve the system scalability by enabling load-balancing
 
 6. Code on Demand
 an optional constraint where the server temporarily extends the functionality of a client by the transfer of executable code.
+
+=======================================
+
+Security Design Principles:
+1. Keep it simple
+
+2. Always use HTTPS
+By always using SSL, the authentication credentials can be simplified to a randomly generated access token that is delivered in the username field of HTTP Basic Auth.
+It’s relatively simple to use, and you get a lot of security features for free.
+
+3. Use password hash
+Passwords must always be hashed to protect the system (or minimize the damage) even if it is compromised in some hacking attempt.
+There are many such hashing algorithms which can prove really effective for password security e.g. MD5, SHA, PBKDF2, bcrypt and scrypt algorithms.
+
+4. Never expose information on URLs
+User names, passwords, session tokens, and API keys should not appear in the URL, as this can be captured in web server logs, which makes them easily exploitable.
+https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd123456789  //Very BAD !!
+Above URL exposes API key So, never use this form of security.
+
+5. Consider OAuth
+
+6. Consider Adding Timestamp in Request
+Along with other request parameters, you may add a request timestamp as HTTP custom header in API request.
+The server will compare the current timestamp to the request timestamp, and only accepts the request if it is within a reasonable time frame (1-2 minutes, perhaps).
+This will prevent very basic replay attacks from people who are trying to brute force your system without changing this timestamp.
+
+7. Input Parameter Validation
+Validate request parameters on the very first step, before it reaches to application logic.
+Put strong validation checks and reject the request immediately if validation fails.
+In API response, send relevant error messages and example of correct input format to improve user experience.
